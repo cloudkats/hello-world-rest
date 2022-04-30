@@ -14,3 +14,14 @@ hooks: ## Setup pre commit.
 
 validate: ## Validate files with pre-commit hooks
 	@pre-commit run --all-files
+
+run: ## Run locally
+	@docker-compose up
+
+stop: ## Stop locall development
+	@docker-compose stop
+
+destroy: ## To remove volumes and have a fresh DB on next run
+	@docker-compose down
+	@docker volume prune -f
+	@docker rmi $(shell docker images --filter "dangling=true" -q --no-trunc) -f

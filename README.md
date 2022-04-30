@@ -27,6 +27,17 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Docker Compose
+
+Dashboard `http://localhost/dashboard`
+
+Example runs
+
+```sh
+curl -s localhost:8080/api/rawdata | jq .
+curl -H 'Host:whoami.docker.localhost' 'http://localhost/'
+```
+
 ---
 
 ## Create
@@ -42,4 +53,3 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 [governance.link-checker.badge]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.links-checker.yml/badge.svg
 [governance.link-checker.status]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.links-checker.yml
-

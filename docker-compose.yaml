@@ -1,0 +1,54 @@
+version: "3"
+services:
+  api-gateway:
+    # https://doc.traefik.io/traefik/user-guides/docker-compose/basic-example/
+    # https://github.com/traefik/blog-posts/blob/master/2019_09_10-101_docker/docker-compose-09.yml
+    # https://hub.docker.com/_/traefik
+    image: traefik:2.6
+    command:
+    # Traefik will listen on port 8080 by default for API request.
+    - "--api.insecure=true"
+    - "--providers.docker=true"
+    # Do not expose containers unless explicitly told so
+    - "--providers.docker.exposedbydefault=false"
+    # Traefik will listen to incoming request on the port 80 (HTTP)
+    - "--entrypoints.web.address=:80"
+    - "--log.level=INFO"
+    - "--api.dashboard=true"
+    - "traefik.http.routers.api.rule=PathPrefix(`/api`) || PathPrefix(`/dashboard`)"
+    ports:
+    - "80:80"     # The HTTP port
+    - "8080:8080" # Dashboard port
+    volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  whoami:
+    image: "traefik/whoami"
+    container_name: "simple-service"
+    labels:
+      # Explicitly tell Traefik to expose this container
+      - "traefik.enable=true"
+      # The domain the service will respond to
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+      # Allow request only from the predefined entry point named "web"
+      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.backend=whoami"
+      - "traefik.frontend.rule=PathPrefix:/whoami/"
+
+  # service_web:
+  #   image: vad1mo/hello-world-rest
+  #   labels:
+  #     # Explicitly tell Traefik to expose this container
+  #     - "traefik.enable=true"
+  #     # The domain the service will respond to
+  #     - "traefik.http.routers.service_web.rule=Host(`rest.docker.localhost`)"
+  #     # Allow request only from the predefined entry point named "web"
+  #     - "traefik.http.routers.service_web.entrypoints=web"
+  #     - "traefik.backend=rest"
+  #     - "traefik.frontend.rule=PathPrefix:/rest/"
+
+# Dashboard (http://localhost:8080/dashboard#/)
+# Route (http://whoami.docker.localhost/)
+# Route (http://rest.docker.localhost/foo/bar)
+# curl -H 'Host:rest.docker.localhost' 'http://localhost/'
+# curl -H 'Host:whoami.docker.localhost' 'http://localhost/'
