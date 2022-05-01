@@ -27,6 +27,13 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Run
+
+```sh
+docker run --rm -it -p 8080:3000 cloudkats/hello-world-rest
+curl -i localhost:8080/env
+```
+
 ## Docker Compose
 
 Dashboard `http://localhost:8080/dashboard`
