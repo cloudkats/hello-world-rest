@@ -13,11 +13,6 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 ---
 
-[![governance][governance-badge]][governance-action]
-[![governance.link-checker][governance.link-checker.badge]][governance.link-checker.status]
-
----
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
@@ -26,6 +21,12 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 - [Resources](#resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Docker Image
+
+|  Name    | Badges  | Version |
+|:---------|:----------|:-----------|
+| [Hello World App](./Dockerfile) | [![][badge]][badge.yml] [![][docker.pulls]][docker.pulls] ![][docker.size] | [![][docker.version]][docker.version] |
 
 ## Run
 
@@ -60,8 +61,7 @@ curl -i localhost:3000/env/rvm_
 [template.generate]: https://github.com/cloudkats/hello-world-rest/generate
 [code-style.badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 
-[governance-badge]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.bot.yml/badge.svg
-[governance-action]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.bot.yml
-
-[governance.link-checker.badge]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.links-checker.yml/badge.svg
-[governance.link-checker.status]: https://github.com/cloudkats/hello-world-rest/actions/workflows/governance.links-checker.yml
+[badge.yml]: https://github.com/cloudkats/hello-world-rest/actions?query=workflow%3Adocker.build-push
+[docker.pulls]: https://img.shields.io/docker/pulls/cloudkats/hello-world-rest?color=green&logo=docker&logoColor=#aae5ed&style=flat-square
+[docker.size]: https://img.shields.io/docker/image-size/cloudkats/hello-world-rest
+[docker.version]: https://img.shields.io/docker/v/cloudkats/hello-world-rest?color=green&logo=docker&logoColor=#aae5ed&style=flat-square
