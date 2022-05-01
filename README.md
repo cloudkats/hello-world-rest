@@ -1,6 +1,6 @@
 # Hello World REST Service
 
-Simple REST Service that echos some requests back, has `healths` and `versionz` checks. This service runs inside a container so there is almost no overhead in getting started.
+Simple REST Service that echos some requests back, has `health` and `version` checks. This service runs inside a container so there is almost no overhead in getting started.
 
 ---
 
@@ -29,6 +29,17 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 - Use it to test load balancers by peeking at the out and see the host/ip.
 - Use it for Hello World demo projects that require some basic Rest functionality.
 
+### Endpoints
+
+```
+/version
+/status
+/env
+/env/:pattern
+/echo
+/echo/headers
+```
+
 ## Docker Image
 
 |  Name    | Badges  | Version |
@@ -43,6 +54,8 @@ curl -i localhost:8080/env
 ```
 
 ## Docker Compose
+
+Run compose `make run`.
 
 Dashboard `http://localhost:8080/dashboard`
 
