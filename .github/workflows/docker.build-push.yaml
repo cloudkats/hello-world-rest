@@ -4,6 +4,7 @@ name: docker.build-push
 on:
   push:
     paths:
+      - .github/**
       - app/**
       - Dockerfile
   workflow_dispatch:
