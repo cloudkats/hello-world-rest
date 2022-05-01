@@ -61,7 +61,7 @@ jobs:
           TAG_VERSION: ${{ steps.prep.outputs.version }}
           CREATED: ${{ steps.prep.outputs.tag_date }}
           BUILD_URL: ${{ steps.prep.outputs.action_run_url }}
-          IMAGE_VERSION: ${{ steps.prep.outputs.docker_version }}
+          IMAGE_VERSION: ${{ steps.prep.outputs.sha }}
         run: |
           ./bin/build.sh
           ./bin/push.sh
@@ -114,6 +114,6 @@ jobs:
           TAG_VERSION: ${{ steps.prep.outputs.version }}
           CREATED: ${{ steps.prep.outputs.tag_date }}
           BUILD_URL: ${{ steps.prep.outputs.action_run_url }}
-          IMAGE_VERSION: ${{ steps.prep.outputs.docker_version }}
+          IMAGE_VERSION: ${{ steps.prep.outputs.version }}
         run: |
           ./bin/build.sh
