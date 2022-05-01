@@ -26,7 +26,7 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 |  Name    | Badges  | Version |
 |:---------|:----------|:-----------|
-| [Hello World App](./Dockerfile) | [![][badge]][badge.yml] [![][docker.pulls]][docker.pulls] ![][docker.size] | [![][docker.version]][docker.version] |
+| [Hello World App](./Dockerfile) | [![][gh-action]][gh-action.yml] [![][docker.pulls]][docker.pulls] ![][docker.size] | [![][docker.version]][docker.version] |
 
 ## Run
 
@@ -61,7 +61,7 @@ curl -i localhost:3000/env/rvm_
 [template.generate]: https://github.com/cloudkats/hello-world-rest/generate
 [code-style.badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 
-[badge.yml]: https://github.com/cloudkats/hello-world-rest/actions/workflows/docker.build-push.yaml
+[gh-action.yml]: https://github.com/cloudkats/hello-world-rest/actions/workflows/docker.build-push.yaml
 [docker.pulls]: https://img.shields.io/docker/pulls/cloudkats/hello-world-rest?color=green&logo=docker&logoColor=#aae5ed&style=flat-square
 [docker.size]: https://img.shields.io/docker/image-size/cloudkats/hello-world-rest
 [docker.version]: https://img.shields.io/docker/v/cloudkats/hello-world-rest?color=green&logo=docker&logoColor=#aae5ed&style=flat-square
