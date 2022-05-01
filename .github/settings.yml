@@ -2,8 +2,8 @@
 _extends: .github
 
 repository:
-  description: ":art: My base blueprint."
-  topics: "ivank, blueprint, accelerator, base"
+  description: ":fairy: A simple REST Service that echoes back request send to it as well as provide some testing functionality."
+  topics: "ivank, hello-world, rest, nodejs"
   private: false
   has_issues: true
   has_projects: false

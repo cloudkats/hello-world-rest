@@ -22,6 +22,13 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## What is this sevice good for?
+
+- Easy test reverse proxy routes and paths.
+- Use this service as a dummy to see if request reach your service correctly.
+- Use it to test load balancers by peeking at the out and see the host/ip.
+- Use it for Hello World demo projects that require some basic Rest functionality.
+
 ## Docker Image
 
 |  Name    | Badges  | Version |
