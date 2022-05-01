@@ -29,13 +29,16 @@ Simple REST Service that echos some requests back, has `healths` and `versionz` 
 
 ## Docker Compose
 
-Dashboard `http://localhost/dashboard`
+Dashboard `http://localhost:8080/dashboard`
 
 Example runs
 
 ```sh
 curl -s localhost:8080/api/rawdata | jq .
 curl -H 'Host:whoami.docker.localhost' 'http://localhost/'
+curl -i localhost:3000/echo/12345
+curl -i localhost:3000/env
+curl -i localhost:3000/env/rvm_
 ```
 
 ---
