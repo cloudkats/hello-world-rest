@@ -17,6 +17,10 @@ app.get('/status', function (req, res) {
   res.status(200).send({ status: 'up' });
 });
 
+app.get('/health', function (req, res) {
+  res.status(200).send({ status: 'up' });
+});
+
 app.get('/version', function (req, res) {
   res.status(200).send({ version: config.version });
 });

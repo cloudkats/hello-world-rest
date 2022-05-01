@@ -37,6 +37,8 @@ Example runs
 curl -s localhost:8080/api/rawdata | jq .
 curl -H 'Host:whoami.docker.localhost' 'http://localhost/'
 curl -i localhost:3000/echo/12345
+curl -i localhost:3000/version
+curl -i localhost:3000/status
 curl -i localhost:3000/env
 curl -i localhost:3000/env/rvm_
 ```

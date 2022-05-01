@@ -35,20 +35,28 @@ services:
       - "traefik.backend=whoami"
       - "traefik.frontend.rule=PathPrefix:/whoami/"
 
-  # service_web:
-  #   image: vad1mo/hello-world-rest
-  #   labels:
-  #     # Explicitly tell Traefik to expose this container
-  #     - "traefik.enable=true"
-  #     # The domain the service will respond to
-  #     - "traefik.http.routers.service_web.rule=Host(`rest.docker.localhost`)"
-  #     # Allow request only from the predefined entry point named "web"
-  #     - "traefik.http.routers.service_web.entrypoints=web"
-  #     - "traefik.backend=rest"
-  #     - "traefik.frontend.rule=PathPrefix:/rest/"
+  api:
+    image: hello-world-rest
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        VERSION: docker-compose
+    labels:
+      # Explicitly tell Traefik to expose this container
+      - "traefik.enable=true"
+      # The domain the service will respond to
+      - "traefik.http.routers.api.rule=Host(`api.docker.localhost`)"
+      # Allow request only from the predefined entry point named "web"
+      - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.backend=api"
+      - "traefik.frontend.rule=PathPrefix:/api/"
+    environment:
+      POSTGRES_PASSWORD: guest
+      POSTGRES_USER: guest
 
 # Dashboard (http://localhost:8080/dashboard#/)
 # Route (http://whoami.docker.localhost/)
 # Route (http://rest.docker.localhost/foo/bar)
-# curl -H 'Host:rest.docker.localhost' 'http://localhost/'
+# curl -H 'Host:api.docker.localhost' 'http://localhost/'
 # curl -H 'Host:whoami.docker.localhost' 'http://localhost/'

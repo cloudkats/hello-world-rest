@@ -25,3 +25,7 @@ destroy: ## To remove volumes and have a fresh DB on next run
 	@docker-compose down
 	@docker volume prune -f
 	@docker rmi $(shell docker images --filter "dangling=true" -q --no-trunc) -f
+
+api-rebuild: ## Restart 'API' service locally
+	@docker-compose build api
+	@docker-compose restart api
