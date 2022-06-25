@@ -13,8 +13,10 @@ else
   while IFS= read -r line; do
     KEY="${line%%=*}"
     VALUE="${line%%*=}"
-    echo "set: $KEY"
-    export $KEY=${VALUE}
+    if [ !  -z "${KEY}" ];then
+      echo "set: $KEY"
+      export $KEY=${VALUE}
+    fi
   done < values.env
 fi
 
