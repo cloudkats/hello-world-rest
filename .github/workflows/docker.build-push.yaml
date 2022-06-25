@@ -7,6 +7,7 @@ on:
       - .github/**
       - app/**
       - Dockerfile
+      - entrypoint.sh
   workflow_dispatch:
     inputs:
       push:
