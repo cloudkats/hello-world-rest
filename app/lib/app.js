@@ -5,6 +5,8 @@ var express = require('express');
 const config = require("./config");
 const { listEnvs } = require("./listenvs");
 
+console.log(`Start application ${config.name}, version: ${config.version}. On port: ${config.port}`);
+
 var app = express();
 
 app.use(function (req, res, next) {
