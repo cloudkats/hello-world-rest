@@ -27,6 +27,11 @@ EXPOSE 3000
 ARG VERSION
 ENV VERSION=$VERSION
 
+# hadolint ignore=DL3016,DL3018
+RUN apk add --update --no-cache \
+    curl jq bash; \
+    rm -rf /var/cache/apk/*;
+
 # Metadata
 LABEL org.opencontainers.image.authors="cloudkats@gmail.com" \
     org.opencontainers.image.vendor="https://github.com/cloudkats" \
