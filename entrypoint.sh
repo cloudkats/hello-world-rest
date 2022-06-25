@@ -1,5 +1,4 @@
-#!/bin/sh
-# vim:sw=4:ts=4:et
+#!/usr/bin/env bash
 
 set -e
 
@@ -11,6 +10,13 @@ else
   source values.env
   unset APP_ENV_VALUES
   echo "sourced 'APP_ENV_VALUES' from 'values.env' file"
+
+  while IFS= read -r line; do
+    KEY="${line%%=*}"
+    VALUE="${line%%*=}"
+    echo "set: $KEY"
+    export $KEY=${VALUE}
+  done < values.env
 fi
 
 exec "$@"
