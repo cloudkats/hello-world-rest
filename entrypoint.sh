@@ -7,7 +7,8 @@ if [ -z "${APP_ENV_VALUES:-}" ]; then
   echo ""
 else
   echo "APP_ENV_VALUES found"
-  source ${APP_ENV_VALUES}
+  echo "${APP_ENV_VALUES}" > values.env
+  source values.env
 fi
 
 exec "$@"
