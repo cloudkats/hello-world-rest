@@ -1,0 +1,13 @@
+#!/bin/sh
+# vim:sw=4:ts=4:et
+
+set -e
+
+if [ -z "${APP_ENV_VALUES:-}" ]; then
+  echo ""
+else
+  echo "APP_ENV_VALUES found"
+  source ${APP_ENV_VALUES}
+fi
+
+exec "$@"

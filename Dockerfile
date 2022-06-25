@@ -41,4 +41,8 @@ LABEL org.opencontainers.image.authors="cloudkats@gmail.com" \
     org.opencontainers.image.licenses="https://github.com/cloudkats/hello-world-rest/LICENCE" \
     org.opencontainers.image.version="${VERSION}"
 
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 CMD [ "node", "./server.js" ]
