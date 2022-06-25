@@ -7,7 +7,6 @@ if [ -z "${APP_ENV_VALUES:-}" ]; then
 else
   echo "APP_ENV_VALUES found"
   echo "${APP_ENV_VALUES}" > values.env
-  source values.env
   unset APP_ENV_VALUES
   echo "sourced 'APP_ENV_VALUES' from 'values.env' file"
 
