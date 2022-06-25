@@ -10,4 +10,4 @@ set -ex
 docker build -t "${IMAGE}" . \
   --label "org.opencontainers.image.created=${CREATED}" \
   --label "org.opencontainers.image.build-url=${BUILD_URL}" \
-  --build-arg VERSION=${TAG_VERSION_DATE}
+  --build-arg VERSION=${TAG_VERSION_SHA}
