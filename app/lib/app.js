@@ -16,20 +16,28 @@ app.use(function (req, res, next) {
 
 // Routes
 app.get('/status', function (req, res) {
-  res.status(200).send({ status: 'up' });
+  let status = { status: 'up' }
+  console.log(`endpoint: /status. result ${JSON.stringify(status)}`);
+  res.status(200).send(status);
 });
 
 app.get('/health', function (req, res) {
-  res.status(200).send({ status: 'up' });
+  let status = { status: 'up' }
+  console.log(`endpoint: /health. result ${JSON.stringify(status)}`);
+  res.status(200).send(status);
 });
 
 app.get('/version', function (req, res) {
+  let json = { version: config.version };
+  console.log(`endpoint: /version. result ${JSON.stringify(json)}`);
   res.status(200).send({ version: config.version });
 });
 
 app.get('/env', function (req, res) {
   let envs = listEnvs();
   res.setHeader('Content-Type', 'application/json');
+  let json = { length: envs.size, data: envs };
+  console.log(`endpoint: /env. result ${JSON.stringify(json)}`);
   res.status(200).send({length: envs.size, data: envs});
 });
 
