@@ -29,7 +29,7 @@ ENV VERSION=$VERSION
 
 # hadolint ignore=DL3016,DL3018
 RUN apk add --update --no-cache \
-    curl jq bash; \
+    curl bash; \
     rm -rf /var/cache/apk/*;
 
 # Metadata
