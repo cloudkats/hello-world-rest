@@ -12,7 +12,7 @@ else
 
   while IFS= read -r line; do
     KEY="${line%%=*}"
-    VALUE="${line%%*=}"
+    VALUE="${line##*=}"
     if [ !  -z "${KEY}" ];then
       echo "set: $KEY"
       export ${line}
