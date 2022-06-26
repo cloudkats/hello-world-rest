@@ -15,7 +15,7 @@ else
     VALUE="${line%%*=}"
     if [ !  -z "${KEY}" ];then
       echo "set: $KEY"
-      export $KEY=${VALUE}
+      export ${line}
     fi
   done < values.env
 fi
