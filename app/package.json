@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "express": "4.18.1",
-    "env-var": "7.1.1"
+    "env-var": "7.3.0"
   },
   "description": "Node.js Hello Worl Rest that provide mulitple routes.",
   "keywords": [
