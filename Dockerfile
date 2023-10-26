@@ -7,7 +7,7 @@
 # docker tag hello-world-rest:local cloudkats/hello-world-rest:local
 # docker push cloudkats/hello-world-rest:local
 ###
-FROM node:18-alpine@sha256:b3ca07adf425d043e180464aac97cb4f7a566651f77f4ecb87b10c10788644bb
+FROM node:20-alpine@sha256:8e015de364a2eb2ed7c52a558e9f716dcb615560ffd132234087c10ccc1f2c63
 
 # Create app directory
 WORKDIR /usr/src/app
