@@ -4,7 +4,7 @@ services:
     # https://doc.traefik.io/traefik/user-guides/docker-compose/basic-example/
     # https://github.com/traefik/blog-posts/blob/master/2019_09_10-101_docker/docker-compose-09.yml
     # https://hub.docker.com/_/traefik
-    image: traefik:v2.8
+    image: traefik:v2.11
     command:
     # Traefik will listen on port 8080 by default for API request.
     - "--api.insecure=true"
